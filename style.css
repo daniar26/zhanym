@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    overflow: hidden; /* Убираем скролл */
+}
+
+h1 {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+    z-index: 10;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100vw;
+    height: 100vh;
+}
+
+.photo-item {
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05); /* Увеличение картинки при наведении */
+}
+
+.circular-garland {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Чтобы гирлянда не мешала взаимодействовать с фото */
+}
+
+.bulb {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.bulb:hover {
+    background-color: yellow;
+    box-shadow: 0 0 25px 10px rgba(255, 255, 0, 0.9);
+}
